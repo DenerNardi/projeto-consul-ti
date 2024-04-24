@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/homestyles.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="navigation_link" href="#">Empresas</a></li>
+                <li><a class="navigation_link" href="setores.html">Setores</a></li>
+                <li><a class="navigation_link"  href="#">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <button><a class="foradd_link" href="{{ url_for('cadastrar_empresa')}}">Add Nova Empresa</a></button>
+        </section>
+        <section>
+            <div class="div_table">
+            <table class="home_table">
+                <tr class="home-table_header">
+                    <th>Empresa</th>
+                    <th>Razão Social</th>
+                    <th>CNPJ</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for empresa in datas %}
+                <tr>                    
+                    <td>{{ empresa.razao_social }}</td>
+                    <td>{{ empresa.nome_fantasia }}</td>
+                    <td>{{ empresa.cnpj }}</td>
+                    <td><a href="{{ url_for('editar', id=empresa.idempresas )}}" class="btnedit">Editar</a></td>
+                    <td><a href="{{ url_for('deletar', id=empresa.idempresas) }}" class="btndel" onclick="return confirm('Deseja apagar?')">Deletar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            </div>
+        </section>        
+    </main>
+</body>
+</html>
