@@ -70,29 +70,3 @@ def deletar(id):
 if __name__=='__main__':
     app.secret_key="admin123"
     app.run(debug=True)
-         
-
-         
-
-#read
-# command = f'SELECT * FROM empresas'
-# cursor.execute(command)
-# result = cursor.fetchall()
-# print(result)
-
-#update
-# nome_fantasia = "mercado inacia"
-# razao_social = "claudia carvalho"
-# command = f'UPDATE empresas SET nome_fantasia = "{nome_fantasia}" WHERE razao_social = "{razao_social}"'
-# cursor.execute(command)
-# connection.commit()
-
-#delete
-# razao_social = "claudia carvalho"
-# command = f'DELETE FROM empresas WHERE razao_social = "{razao_social}"'
-# cursor.execute(command)
-# connection.commit()
-
-
-# cursor.close()
-# connection.close()
